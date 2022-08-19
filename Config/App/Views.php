@@ -1,0 +1,15 @@
+<?php
+class Views{
+    public function getView($controlador, $vista)
+    {
+      $controlador = get_class($controlador);
+      if ($controlador == "Home") {
+        $vista = "Views/".$vista.".php";
+      } else {
+        $vista ="views/".$controlador."/".$vista.".php";
+      } 
+      require_once $vista;
+    }
+}
+
+?>
